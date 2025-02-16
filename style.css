@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+}
+
+/* Glitch Effect */
+.glitch-text {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px red; }
+    25% { text-shadow: -2px -2px blue; }
+    50% { text-shadow: 2px -2px green; }
+    75% { text-shadow: -2px 2px yellow; }
+    100% { text-shadow: 2px 2px red; }
+}
+
+/* Burning Rose Animation */
+.fire {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.rose {
+    width: 120px;
+    height: auto;
+    filter: brightness(0.8);
+}
+
+.flames {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.flame {
+    width: 20px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    animation: flicker 0.3s infinite alternate;
+}
+
+.flame:nth-child(1) { animation-delay: 0.1s; }
+.flame:nth-child(2) { animation-delay: 0.2s; }
+.flame:nth-child(3) { animation-delay: 0.3s; }
+.flame:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes flicker {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0.7; }
+  }
